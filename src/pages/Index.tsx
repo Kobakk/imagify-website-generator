@@ -57,29 +57,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Hearts Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-playfair text-3xl md:text-4xl">
-                Passion in Every Detail
-              </h2>
-              <p className="text-gray-300 font-inter leading-relaxed">
-                Every creation is a journey through emotions, carefully crafted to touch hearts and inspire souls. Our art speaks the universal language of love and connection.
-              </p>
-            </div>
-            <div ref={heartRef} className="relative grid grid-cols-2 gap-8">
-              <img
-                src="/lovable-uploads/5009b84b-7627-498d-a0be-ea2cd5ffac1b.png"
-                alt="Artistic Hearts"
-                className="col-span-2 w-full max-w-md mx-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-4">
