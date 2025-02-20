@@ -46,8 +46,8 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 z-10">
-          <div className="text-center -mt-32">
-            <h1 className="font-playfair text-3xl md:text-4xl animate-fade-in italic tracking-wider">
+          <div className="text-center -mt-72">
+            <h1 className="font-playfair text-2xl md:text-3xl animate-fade-in italic tracking-widest">
               From the heart
             </h1>
           </div>
