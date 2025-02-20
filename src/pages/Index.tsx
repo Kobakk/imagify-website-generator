@@ -46,13 +46,10 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 z-10">
-          <div className="text-center">
-            <h1 className="font-gothic text-4xl md:text-5xl mb-6 animate-fade-in italic">
+          <div className="text-center -mt-32">
+            <h1 className="font-gothic text-3xl md:text-4xl animate-fade-in italic">
               From the heart
             </h1>
-            <p className="font-inter text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 animate-fade-in-delay">
-              Crafting emotions into art, one piece at a time
-            </p>
           </div>
         </div>
       </section>
