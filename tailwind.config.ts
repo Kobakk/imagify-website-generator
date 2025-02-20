@@ -22,6 +22,7 @@ export default {
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
         inter: ["Inter", "sans-serif"],
+        gothic: ["UnifrakturMaguntia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,4 +63,3 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
