@@ -1,9 +1,10 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="fixed w-full z-50 bg-black/95 backdrop-blur-sm">
@@ -29,22 +30,22 @@ const Navbar = () => {
           
           {/* Desktop menu */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <NavLink href="/about">SOBRE MI</NavLink>
-            <NavLink href="/collections">COLECCIONES</NavLink>
-            <NavLink href="/shop">TIENDA</NavLink>
-            <NavLink href="/portfolio">PORTAFOLIO</NavLink>
-            <NavLink href="/services">SERVICIOS</NavLink>
+            <NavLink href="/about" isActive={location.pathname === '/about'}>SOBRE MI</NavLink>
+            <NavLink href="/collections" isActive={location.pathname === '/collections'}>COLECCIONES</NavLink>
+            <NavLink href="/shop" isActive={location.pathname === '/shop'}>TIENDA</NavLink>
+            <NavLink href="/portfolio" isActive={location.pathname === '/portfolio'}>PORTAFOLIO</NavLink>
+            <NavLink href="/services" isActive={location.pathname === '/services'}>SERVICIOS</NavLink>
           </div>
         </div>
         
         {/* Mobile menu */}
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <MobileNavLink href="/about">SOBRE MI</MobileNavLink>
-            <MobileNavLink href="/collections">COLECCIONES</MobileNavLink>
-            <MobileNavLink href="/shop">TIENDA</MobileNavLink>
-            <MobileNavLink href="/portfolio">PORTAFOLIO</MobileNavLink>
-            <MobileNavLink href="/services">SERVICIOS</MobileNavLink>
+            <MobileNavLink href="/about" isActive={location.pathname === '/about'}>SOBRE MI</MobileNavLink>
+            <MobileNavLink href="/collections" isActive={location.pathname === '/collections'}>COLECCIONES</MobileNavLink>
+            <MobileNavLink href="/shop" isActive={location.pathname === '/shop'}>TIENDA</MobileNavLink>
+            <MobileNavLink href="/portfolio" isActive={location.pathname === '/portfolio'}>PORTAFOLIO</MobileNavLink>
+            <MobileNavLink href="/services" isActive={location.pathname === '/services'}>SERVICIOS</MobileNavLink>
           </div>
         </div>
       </div>
@@ -52,19 +53,23 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const NavLink = ({ href, children, isActive = false }: { href: string; children: React.ReactNode; isActive?: boolean }) => (
   <Link
     to={href}
-    className="text-gray-300 hover:text-white px-3 py-2 text-sm font-inter tracking-wider transition-colors duration-200"
+    className={`px-3 py-2 text-sm font-inter tracking-wider transition-colors duration-200 ${
+      isActive ? 'text-white' : 'text-gray-300 hover:text-white'
+    }`}
   >
     {children}
   </Link>
 );
 
-const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const MobileNavLink = ({ href, children, isActive = false }: { href: string; children: React.ReactNode; isActive?: boolean }) => (
   <Link
     to={href}
-    className="text-gray-300 hover:text-white block px-3 py-2 text-base font-inter tracking-wider"
+    className={`block px-3 py-2 text-base font-inter tracking-wider ${
+      isActive ? 'text-white' : 'text-gray-300 hover:text-white'
+    }`}
   >
     {children}
   </Link>
