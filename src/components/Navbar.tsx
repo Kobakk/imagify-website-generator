@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +10,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="/" className="text-white font-playfair text-2xl">
+            <Link to="/" className="text-white font-playfair text-2xl">
               MDINNNA
-            </a>
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -52,22 +53,21 @@ const Navbar = () => {
 };
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className="text-gray-300 hover:text-white px-3 py-2 text-sm font-inter tracking-wider transition-colors duration-200"
   >
     {children}
-  </a>
+  </Link>
 );
 
 const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className="text-gray-300 hover:text-white block px-3 py-2 text-base font-inter tracking-wider"
   >
     {children}
-  </a>
+  </Link>
 );
 
 export default Navbar;
-
